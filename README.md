@@ -6,7 +6,7 @@ A Docker image which allows you to run a containerised Salt-Master server.
 
 You can easily run the container like so:
 
-    docker run --rm -it soon/salt-master
+    docker run --rm -it justinbarrick/salt-master
 
 ## Environment Variables
 
@@ -38,7 +38,7 @@ This will create a stopped container wwith the name of `salt-master-data` and
 will hold our persistant salt master data. Now we just need to run our master
 container with the `--volumes-from` command:
 
-    docker run --rm -it --volumes-from salt-master-data soon/salt-master
+    docker run --rm -it --volumes-from salt-master-data justinbarrick/salt-master
 
 ### Sharing Local Folders
 
@@ -69,7 +69,7 @@ you to connect to running containers. Follow the instructions here: https://gith
 
 Once installed run:
 
-    $ CONTAINER_ID=$(docker run -d soon/salt-master)
+    $ CONTAINER_ID=$(docker run -d justinbarrick/salt-master)
     $ docker-enter $CONTAINER_ID
     $ root@CONTAINER_ID:~# salt '*' test.ping
     $ root@CONTAINER_ID:~# salt '*' grains.items
