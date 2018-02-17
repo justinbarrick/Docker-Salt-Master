@@ -1,7 +1,7 @@
 FROM alpine:3.7
 
 RUN apk update
-RUN apk add salt-master=2017.7.2-r0
+RUN apk add salt-master=2017.7.2-r0 git
 
 VOLUME ['/etc/salt/pki', '/var/cache/salt', '/var/logs/salt', '/etc/salt/master.d', '/srv/salt']
 
